@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
-export const pages = defineType({
-  name: 'pages',
-  title: 'Pages',
+export const blogs = defineType({
+  name: 'blogs',
+  title: 'Blogs',
   type: 'document',
   fields: [
     defineField({
@@ -23,6 +23,18 @@ export const pages = defineType({
 
 
 
+      defineField({
+        name: 'publishedAt',  // Field for storing today's date
+        type: 'datetime',
+        title: 'Published At',
+        options: {
+          default: new Date().toISOString(),  // Automatically sets today's date and time
+        },
+      }),
+
+
+
+
     defineField({
         name: 'details',
         type: 'array',
@@ -36,7 +48,7 @@ export const pages = defineType({
 
 
 
-      {
+      defineField({
         name: 'image',
         title: 'Image',
         type: 'image',
@@ -67,7 +79,7 @@ export const pages = defineType({
             description: 'Tags to categorize images',
           },
         ],
-      },
+      }),
 
 
       
