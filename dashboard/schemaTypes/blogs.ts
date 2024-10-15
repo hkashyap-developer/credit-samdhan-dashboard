@@ -35,6 +35,17 @@ export const blogs = defineType({
 
 
 
+      defineField({
+        name: 'excerpt',  // Excerpt field
+        type: 'text',
+        title: 'Excerpt',
+        description: 'A short summary or preview of the post',
+        validation: Rule => Rule.max(200).warning('Excerpts should be under 200 characters.'),  // Optional validation
+      }),
+
+
+
+
     defineField({
         name: 'details',
         type: 'array',
