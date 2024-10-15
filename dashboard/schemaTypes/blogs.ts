@@ -5,6 +5,7 @@ export const blogs = defineType({
   title: 'Blogs',
   type: 'document',
   fields: [
+
     defineField({
       name: 'title',
       type: 'string',
@@ -32,9 +33,6 @@ export const blogs = defineType({
         },
       }),
 
-
-
-
       defineField({
         name: 'excerpt',  // Excerpt field
         type: 'text',
@@ -43,25 +41,15 @@ export const blogs = defineType({
         validation: Rule => Rule.max(200).warning('Excerpts should be under 200 characters.'),  // Optional validation
       }),
 
-
-
-
     defineField({
         name: 'details',
         type: 'array',
         of: [{type: 'block'}],
       }),
 
-
-
-
-
-
-
-
       defineField({
         name: 'image',
-        title: 'Image',
+        title: 'Thumbnail',
         type: 'image',
         options: {
           hotspot: true, // Enables image cropping/positioning
@@ -73,26 +61,25 @@ export const blogs = defineType({
             type: 'string',
             description: 'Alternative text for accessibility and SEO',
           },
+        ],
+      }),
+
+      defineField({
+        name: 'full_image',
+        title: 'Full Image',
+        type: 'image',
+        options: {
+          hotspot: true, // Enables image cropping/positioning
+        },
+        fields: [
           {
-            name: 'caption',
-            title: 'Caption',
+            name: 'alt',
+            title: 'Alt Text',
             type: 'string',
-            description: 'Caption for the image',
-            options: {
-              isHighlighted: true, // Ensure this field shows up on the main image selection
-            },
-          },
-          {
-            name: 'tags',
-            title: 'Tags',
-            type: 'array',
-            of: [{ type: 'string' }],
-            description: 'Tags to categorize images',
+            description: 'Alternative text for accessibility and SEO',
           },
         ],
       }),
 
-
-      
   ],
 })

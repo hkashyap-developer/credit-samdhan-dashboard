@@ -36,7 +36,7 @@ export const pages = defineType({
 
 
 
-      {
+      defineField({
         name: 'image',
         title: 'Image',
         type: 'image',
@@ -67,7 +67,42 @@ export const pages = defineType({
             description: 'Tags to categorize images',
           },
         ],
-      },
+      }),
+
+
+
+      defineField({
+        name: 'full_image',
+        title: 'Full Image',
+        type: 'image',
+        options: {
+          hotspot: true, // Enables image cropping/positioning
+        },
+        fields: [
+          {
+            name: 'alt',
+            title: 'Alt Text',
+            type: 'string',
+            description: 'Alternative text for accessibility and SEO',
+          },
+          {
+            name: 'caption',
+            title: 'Caption',
+            type: 'string',
+            description: 'Caption for the image',
+            options: {
+              isHighlighted: true, // Ensure this field shows up on the main image selection
+            },
+          },
+          {
+            name: 'tags',
+            title: 'Tags',
+            type: 'array',
+            of: [{ type: 'string' }],
+            description: 'Tags to categorize images',
+          },
+        ],
+      }),
 
 
       
