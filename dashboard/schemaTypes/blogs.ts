@@ -28,9 +28,6 @@ export const blogs = defineType({
         name: 'publishedAt',  // Field for storing today's date
         type: 'datetime',
         title: 'Published At',
-        options: {
-          default: new Date().toISOString(),  // Automatically sets today's date and time
-        },
       }),
 
       defineField({

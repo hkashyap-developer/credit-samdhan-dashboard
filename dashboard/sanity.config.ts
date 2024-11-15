@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'dashboard',
 
-  projectId: 'e8p2biu2',
+  projectId: 'ab3xok8g',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
